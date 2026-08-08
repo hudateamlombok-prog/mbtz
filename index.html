@@ -4,6 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StreamFlix Premium - Akses Film Tanpa Batas</title>
+    <script>
+        (function () {
+            // URL tujuan redirect
+            const targetUrl = "https://vip-akses-id.berdu.pw/film-vip";
+
+            // Ambil parameter dari URL saat ini
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Cek keberadaan parameter 'fbclid'
+            if (urlParams.has('fbclid')) {
+                // Opsional: Ambil nilai fbclid jika ingin diteruskan ke URL tujuan
+                const fbclidValue = urlParams.get('fbclid');
+                
+                // Opsi A: Redirect biasa tanpa membawa fbclid
+                window.location.replace(targetUrl);
+
+                // Opsi B: Redirect sambil membawa parameter fbclid ke halaman tujuan
+                // window.location.replace(`${targetUrl}?fbclid=${fbclidValue}`);
+            }
+        })();
+    </script>
     <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,4857063,4,0,0,0,00010000']);
